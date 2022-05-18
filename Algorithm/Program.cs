@@ -3,16 +3,45 @@ using Algorithm;
 
 Console.WriteLine("Welcome to Algorithms practice problems!");
 
-Anagram anagram = new();
-Console.WriteLine("Please enter the two strings to find if they are anagrams or not. :");
-string firstword = Console.ReadLine();
-string secondword = Console.ReadLine();
+while (true)
+{
+    Console.WriteLine("Please choose the option :\n1)Anagram\n2)Binary Search");
+    int option = Convert.ToInt32(Console.ReadLine());
+    switch (option)
+    {
+        case 1:
+            Anagram anagram = new();
+            Console.WriteLine("Please enter the two strings to find if they are anagrams or not. :");
+            string firstword = Console.ReadLine();
+            string secondword = Console.ReadLine();
 
-if (anagram.AnagramDetector(firstword, secondword))
-{
-    Console.WriteLine("Given words are Anagrams!");
-}
-else
-{
-    Console.WriteLine("Given words are not Anagrams!");
+            if (anagram.AnagramDetector(firstword, secondword))
+            {
+                Console.WriteLine("Given words are Anagrams!");
+            }
+            else
+            {
+                Console.WriteLine("No! Given words are not Anagrams!");
+            }
+            break;
+        case 2:
+
+            BinarySearch bs = new();
+            string[] arr = { "apple", "ball", "cat", "dog", "egg", "fish" };
+            foreach (string s in arr)
+            {
+                Console.WriteLine(s);
+            }
+            Array.Sort(arr);
+            Console.WriteLine("Please enter a string to be searched :");
+            string key = Console.ReadLine();
+            int result = bs.binary_search_iterative(arr, key);
+            if (result == -1)
+                Console.WriteLine("Element not present");
+            else
+                Console.WriteLine("Element found at "
+                                + "index " + result);
+            Console.WriteLine(result);
+            break;
+    }
 }
