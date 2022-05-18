@@ -5,7 +5,7 @@ Console.WriteLine("Welcome to Algorithms practice problems!");
 
 while (true)
 {
-    Console.WriteLine("Please choose the option :\n1)Anagram\n2)Binary Search\n3)Prime number");
+    Console.WriteLine("Please choose the option :\n1)Anagram\n2)Binary Search\n3)Prime number\n4)Bubble Sorting");
     int option = Convert.ToInt32(Console.ReadLine());
     switch (option)
     {
@@ -46,6 +46,10 @@ while (true)
         case 3:
             PrimeNumbers primeNumbers = new PrimeNumbers();
             primeNumbers.primeNumber();
+            break;
+        case 4:
+            BubbleSorting b = new BubbleSorting();
+            b.BSort();
             break;
     }
 }
